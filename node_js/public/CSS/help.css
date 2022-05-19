@@ -1,0 +1,39 @@
+* {
+    color: #212529;
+}
+
+h1 {
+    font-size: xx-large;
+    font-style: bold;
+    border: double;
+    text-align: center;
+    border-color: #cd2226;
+    border-radius: 0rem;
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.loginin {
+    padding: 20px;
+    border: double;
+    border-color: #cd2226;
+    border-radius: 0rem;
+}
+
+.FAQ {
+    margin-top: 10px;
+    padding: 30px;
+    border: double;
+    border-color: #cd2226;
+    border-radius: 0rem;
+}
+
+.split-column .image img {
+    width: 97%;
+    margin: 2%;
+    float: left;
+    shape-margin: 1rem;
+    padding: 1rem;
+}

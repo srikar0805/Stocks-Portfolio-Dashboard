@@ -1,0 +1,68 @@
+/* body {
+  background-image: url("../Images/login-register-background.jpg");
+} */
+
+.logo {
+  position: relative;
+  height: 86px;
+  margin-left: 6vw;
+  width: 145px;
+}
+
+.button {
+  background-color: #cd2226;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 3%;
+}
+
+.register {
+  background-color: #212529;
+  margin-top: 0%;
+  margin-left: 30%;
+  margin-right: 30%;
+  /* border: 2px solid black; */
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: white;
+  height: 100vh;
+}
+
+.good-email
+{
+  background:white
+}
+.bad-email
+{
+  background:gray;
+}
+
+.button_val{
+  background: #cd2226;
+}
+
+#bt{
+  background: #cd2226;
+}
+@media only screen and (max-width: 768px) {
+  [class*="logo"] {
+    margin-left: 10vh;
+  }
+  [class*="register"] {
+    background-color: #212529;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 2%;
+    border: 2px solid black;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 2%;
+  }
+}

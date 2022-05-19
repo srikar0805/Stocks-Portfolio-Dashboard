@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/home_head.ejs") %>
+
+    <body>
+        <div class="fixed-top">
+            <nav class="navbar navbar-light" style="background-color: #e3f2fd">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <img src="./Images/logo.jpg" alt="" width="50" height="34" class="d-inline-block align-text-top"> Stock Portfolio Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house-chimney-user"></i>
+                Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login" target="_blank"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register" target="_blank"><i class="fa-solid fa-registered"></i>Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/help" target="_blank"><i class="fa-solid fa-handshake-angle"></i>Help</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/aboutus"><i class="fa-solid fa-book-open"></i>About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+            </div>
+
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/Images/homebannertech.jpg" class="d-block w-100 home_img" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 style="color: black;">Personalized Stocks Portfolio Management Dashboard</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/Images/HOME IMAGE_1.jpg" class="d-block w-100 home_img" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Manage All Of Your Portfolios At One Place</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/Images/studyhome.jpg" class="d-block w-100 home_img" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 style="color: black;">Get Detailed Statistics Of Your Portfolios At Your Fingertips</h1>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+            </div>
+
+            <div class="features">Features and Advantages</div>
+
+
+            <div class="card-deck" id="cards">
+                <div class="card">
+                    <img class="card-img-top" src="/Images/img_card1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">ALL IN ONE </h5>
+                        <p class="card-text">Manage the transactions of different Demat Accounts at one place.</p>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="/Images/img_card2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">IN CASE YOU WERE BUSY</h5>
+                        <p class="card-text">We Alert you about your profit/loss in real time.</p>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="/Images/img_card3.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">STATISTICAL INSIGHT</h5>
+                        <p class="card-text">Gives meaningful statistical insights for each of your portfolios individually and combined.</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="spd_container">
+                <div class="A-1" style="margin-right:5%;margin-left:0%">
+                    <i class="fa-regular fa-clock" id="hk"></i>
+                    <h6 style="padding-left: 1.5cm;margin-left: 40%;">Easy and quick to learn</h6>
+                </div>
+                <div class="A-2" style="margin-right:5%;margin-left:0%">
+                    <i class="fa-solid fa-face-grin-wide" id="hk"></i>
+                    <h6 style="padding-left: 1.5cm;margin-left: 40%;">Intutive and simple to use</h6>
+                </div>
+                <div class="A-3" style="margin-right:5%;margin-left:0%">
+                    <i class="fa-solid fa-person-running" id="hk"></i>
+                    <h6 style="padding-left: 1.5cm;margin-left: 1.5cm;">Will not interupt your investments or slow down your equities</h6>
+                </div>
+                <div class="A-4" style="margin-right:5%;margin-left:0%">
+                    <i class="fa-solid fa-arrow-trend-up" id="hk"></i>
+                    <h6 style="padding-left: 1.5cm;margin-left: 1.5cm;">Perceives your transaction data while it dynamically updates your portfolio </h6>
+                </div>
+            </div>
+
+            <div class="spd2_container-fluid">
+                <h2 style="text-align: center;">Best Investment Application</h2>
+                <p style="font-size:30;">Stock Portfolio Dashboard (SPD) is intended to help the user keep account of his/her money invested in Share Market. This part is meant to explain the features of SPD, so as to serve as a guide to the developers on one hand and a website
+                    validation document for the prospective client on the other. SPD is aimed towards a person who has a considerable number of investments in the stock market, and so needs website assistance for book keeping and computations regarding
+                    the investments. SPD is a user-friendly, ‘quick to learn’ and a reliable website for the above purpose.</p>
+            </div>
+            <div class="spd3_container-fluid">
+                <div class="A-5" style="margin-right:20%;margin-left:0%">
+                    <i class="fa-solid fa-people-line" id="v"></i>
+                    <h6 style="padding-left: 1.5cm;margin-left: 50%;">who are we?</h6>
+                </div>
+                <div class="A-6" style="margin-right:20%;margin-left:1%">
+                    <i class="fa-solid fa-question" id="v"></i>
+                    <h6 style="padding-left: 1.5cm;margin-left: 50%;">What we do</h6>
+                </div>
+                <div class="A-6">
+                    <i class="fa-solid fa-screwdriver-wrench" id="v"></i>
+                    <h6 style="padding-left: 1.5cm;margin-left: 50%;">How it works</h6>
+                </div>
+            </div>
+
+            <div class="quote">
+                "The stock market is filled with individuals who know the price of everything, but the value of nothing." - By Phillip Fisher
+            </div>
+
+
+            <div class="bottom-container" id="contactus">
+                <span style="color: #212529; font-size: 20px">For Queries Contact us</span><br /><br />
+
+                <a class="footer-link1" href="https://www.linkedin.com/in/sanju-sabu-9a757a203/">SPD@hotmail.com</a>
+                <a class="footer-link1" href="https://twitter.com/CricessOP/">Twitter</a>
+                <span class="f">Phone: 8728192798</span><br> © 2022 SPD
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            <script>
+                VANTA.WAVES({
+                    el: "#cards",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 510.00,
+                    minWidth: 10.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0x212529
+                })
+            </script>
+    </body>
+
+</html>

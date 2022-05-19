@@ -1,0 +1,26 @@
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3 id="m">Your Profile</h3>
+
+    </div>
+    <form action="/transactions" >
+    <ul class="mynewlist">
+
+        <li>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Portfolios</a>
+
+            <ul class="mylist" id="homeSubmenu">
+
+
+            </ul>
+            <i class="fa-solid fa-plus fa-lg" id="plus"></i> Add Portfolio<br>
+            <!-- <i class="fa-solid fa-trash-can" id="delete"></i> Delete Portfolio -->
+
+        </li>
+        <br><br>
+        <% let tok = token %>
+        <button type="button" class="btn btn-outline-success btn" id=<%= tok %> onclick="transac(event)">Add Transactions</button>
+       
+    </ul>
+    <form>
+</nav>

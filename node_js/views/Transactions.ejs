@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/Transactions_head.ejs") %>
+
+<body>
+    <div id="halo">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <img src="../Images/logo.jpg" alt="" width="50" height="34"
+                            class="d-inline-block align-text-top">
+                        Stock Portfolio Dashboard</a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                
+
+                </div>
+                
+        </nav>
+        <div>
+            <h1>Transactions</h1>
+
+            <div class="dropdown">
+                <label for="dropdown"
+                    style="margin-left: 2%; font-size :x-large; font :900; color:black "><b>Portfolio</b></label>
+                <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Portfolio
+                </button> -->
+           
+            </div>
+            <br>
+
+
+            <div class="addbuttons">
+                <label for="manual" style="margin-left: 1%;">Add Manually</label>
+                <button type="button" class="btn btn-secondary" id="manual">Add Manually</button><br><br>
+                <label for="import" style="margin-left: 1%;">Import via csv</label>
+                <input type="file" accept=".csv" class="btn btn-secondary" id="import"></input>
+            </div>
+            <br>
+            
+            <div id="tab">
+                <form action="/transactions" id="trans_form">
+                <table class="table table-bordered" id="tbl">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date of Transaction</th>
+                            <th scope="col">Ticker</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td><input type="date" name="date0" id="Date0"></td>
+                            <td><input type="text" name="ticker0" id="Ticker0"></td>
+                            <td><select id="select0" name="select0">
+                                    <option value="Buy">Buy</option>
+                                    <option value="Sell">Sell</option>
+                                </select></td>
+                            <td><input type="text" name="quantity0" id="Quantity0"></td>
+                            <td><input type="number" name="price0" id="Price0"></td>
+                            <td><input type="number" name="total0" id="Total0"></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <% let tok = token %>
+                <button class="btn btn-secondary" id="new_row" >Add Row</button>
+                <button class="btn btn-secondary" id="delete_row">Delete Row</button>
+                <button class="btn btn-secondary" id="close">Close</button>
+                <br><br>
+               
+                <button class="btn btn-secondary" id = <%= tok %> onclick="adtransac(event)" type="submit">Add Transaction</button>
+                <form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="/Javascript/Transactions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.halo.min.js"></script> -->
+    <!-- <script>
+        VANTA.HALO({
+            el: "#halo",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            baseColor: 0xcd2226,
+            backgroundColor: 0x212529
+        })
+    </script> -->
+</body>
+
+</html>

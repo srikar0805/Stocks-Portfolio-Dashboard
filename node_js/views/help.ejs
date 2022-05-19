@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/help_head.ejs") %>
+
+    <body style="background-color: white;">
+        <div class="fixed-top">
+            <nav class="navbar navbar-light" style="background-color: #e3f2fd">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <img src="./Images/logo.jpg" alt="" width="50" height="34" class="d-inline-block align-text-top"> Stock Portfolio Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house-chimney-user"></i>
+            Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login" target="_blank"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register" target="_blank"><i class="fa-solid fa-registered"></i>Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/help" target="_blank"><i class="fa-solid fa-handshake-angle"></i>Help</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/aboutus"><i class="fa-solid fa-book-open"></i>About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+            </div>
+            <br><br><br>
+            <h1>Help </h1>
+            <div class="loginin">
+                <h3>Login Instructions</h3>
+                <ol>
+                    <li> If you already have an account then you can enter your credentials and login. </li>
+                    <li>If you are a new user then the first step is to register/signup into the website.</li>
+                    <li>Click on signup button viewed on home page it redirects to the new webpage, enter your credentials which are needed for a new SPD Account</li>
+                    <li>After entering your credentials click on signup button , now your new Account is created.</li>
+                    <li>Use these credentials for logging into your Account. </li>
+                </ol>
+            </div>
+            <div class="FAQ">
+                <section class="row-split columns">
+                    <h3>FAQ's</h3>
+                    <ol>
+                        <section class="row-split columns">
+                            <div class="row m0 split-column wow fadeIn animated" style="visibility: visible;">
+                                <div class="col-sm-6 image">
+                                    <img src="/Images/portfolio.jpg" alt>
+                                </div>
+                                <div class="col-sm-6 text">
+                                    <div class="texts-inner row m0">
+                                        <li><strong>How to make a stock portfolio?</strong>
+                                    </div>
+                                    <br>If you’re a beginner, here are some steps that you can follow to create your very own stock portfolio. But before you begin, make sure you have a demat account. Without it, you won’t be able to invest in the stock
+                                    market.
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="row m0 split-column wow fadeIn animated" style="visibility: visible;">
+                                <div class="col-sm-6 col-sm-pull-6 text">
+                                    <div class="texts-inner row m0">
+                                        <li><strong>Know what your goals are </strong>
+                                    </div>
+                                    <br>Before you even begin creating a stock portfolio, it is extremely essential to first identify your goals. This way, you will be in a better position to create one that’s perfect for you. Although your ultimate goal
+                                    is to generate returns, you would have to identify other aspects such as the time frame within which you expect your goals to be satisfied and the amount of money that you’re willing to invest.
+                                    </li>
+                                </div>
+                                <div class="col-sm-6 col-sm-push-6 image">
+                                    <img src="/Images/goals.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="row m0 split-column wow fadeIn animated" style="visibility: visible;">
+                                <div class="col-sm-6 image">
+                                    <img src="/Images/stocks.jpg" alt>
+                                </div>
+                                <div class="col-sm-6 text">
+                                    <div class="texts-inner row m0">
+                                        <li><strong>Pick fundamentally good stocks</strong>
+                                    </div>
+                                    <br> Once you’ve identified your goals, the next step is to start picking the right stocks for your portfolio. When executing this step, make sure to focus on fundamentally strong companies. They’re the ones that are
+                                    stable, less volatile, and more likely to generate stellar returns over the long-term. No matter how attractive a company may look from the outside, if it doesn’t back it up with strong financials and fundamentals,
+                                    it is less likely to do well in the future.
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="row m0 split-column wow fadeIn animated" style="visibility: visible;">
+                                <div class="col-sm-6 col-sm-pull-6 text">
+                                    <div class="texts-inner row m0">
+                                        <li><strong>Diversify your choices</strong>
+                                    </div>
+                                    <br> There’s one thing that you should always keep in mind when picking stocks for your portfolio - diversification. Try to select stocks from multiple different sectors and industries. This way, you can reduce the
+                                    risk of your portfolio underperforming during tough times. Concentrating on just one or two sectors increases the chances of your portfolio losing its value during periods of downturn.
+                                    </li>
+                                </div>
+                                <div class="col-sm-6 col-sm-push-6 image">
+                                    <img src="/Images/choices.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="row m0 split-column wow fadeIn animated" style="visibility: visible;">
+                                <div class="col-sm-6 image">
+                                    <img src="/Images/Conclude.jpg" alt>
+                                </div>
+                                <div class="col-sm-6 text">
+                                    <div class="texts-inner row m0">
+                                        <li><strong>Conclusion</strong>
+                                    </div>
+                                    <br>Following these three steps diligently can help you create the perfect stock portfolio for yourself. If you haven't registered to SPD yet then here's the link(
+                                    <a href="/register.html">Register Now</a>) to get registered for an account.
+                                    </li>
+                                </div>
+                            </div>
+                        </section>
+                    </ol>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+
+</html>
