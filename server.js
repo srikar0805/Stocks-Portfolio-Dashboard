@@ -50,20 +50,15 @@ app.get("/transactions/:token", async(req, res) => {
     const uname = req.params.token;
     const user = await details.findOne({ username: uname });
 
-    if(!user)
-    {
+    if (!user) {
         res.redirect("/login")
-    }
-    else{
-    res.render("Transactions",{title:uname,token:uname});
+    } else {
+        res.render("Transactions", { title: uname, token: uname });
     }
 })
 
-app.get("/aboutus", (req, res) => {
-    res.render("aboutus");
-})
 
-app.post('/register', async (req, res) => {
+app.post('/register', async(req, res) => {
 
     const data = new details({
         username: req.body.username,
@@ -86,50 +81,45 @@ app.post('/register', async (req, res) => {
 
 })
 
-app.get('/login/admin',(req,res)=>
-{
+app.get('/login/admin', (req, res) => {
     res.render("admin_login");
 
 })
 
-app.get("/loggedin/admin/:token",async (req,res)=>
-{
+app.get("/loggedin/admin/:token", async(req, res) => {
     const uname = req.params.token;
     // const user = await admin_users.findOne({ username: uname });
     let users = details.find({});
-            users.exec((err, data) => {
-                if (err) throw err;
+    users.exec((err, data) => {
+        if (err) throw err;
 
-                res.render("admin", { data: data, usernameAdmin:uname });
-  
-})
+        res.render("admin", { data: data, usernameAdmin: uname });
+
+    })
 })
 
-app.post("/deleteuser/:token", async (req,res)=>
-{
+app.post("/deleteuser/:token", async(req, res) => {
     let userID = req.body.userID;
     let adminUsername = req.body.adminUsername;
     console.log(req.body);
 
-    const users = await details.deleteOne({_id: userID});
-    res.json({redirect: '/loggedin/admin/'+adminUsername});
+    const users = await details.deleteOne({ _id: userID });
+    res.json({ redirect: '/loggedin/admin/' + adminUsername });
 
-}
-)
+})
 
-app.post("/login/admin", async (req,res)=>
-{
-const username = req.body.username;
-const user = await admin_users.findOne({ username: username });
+app.post("/login/admin", async(req, res) => {
+    const username = req.body.username;
+    const user = await admin_users.findOne({ username: username });
 
-if (user.password === req.body.password) {
+    if (user.password === req.body.password) {
 
-    // req.session.isAuth=true;
-    res.redirect("/loggedin/admin/"+username);
-   
-} else {
-    res.redirect("/login/admin")
-}
+        // req.session.isAuth=true;
+        res.redirect("/loggedin/admin/" + username);
+
+    } else {
+        res.redirect("/login/admin")
+    }
 })
 
 app.post('/login', async(req, res) => {
@@ -141,15 +131,13 @@ app.post('/login', async(req, res) => {
 
     // res.cookie("jwt", token);
     // console.log('Login- token part ' + token);
-    if(!user)
-    {
+    if (!user) {
         res.redirect("/login");
-    }
-    else if(user.password === req.body.password) {
+    } else if (user.password === req.body.password) {
 
         // req.session.isAuth=true;
-        res.redirect("/profile/"+uname);
-       
+        res.redirect("/profile/" + uname);
+
 
     } else {
         res.redirect("/login")
@@ -158,66 +146,52 @@ app.post('/login', async(req, res) => {
 })
 
 
-app.get("/profile/:token", async (req, res, next) => {
+app.get("/profile/:token", async(req, res, next) => {
     const uname = req.params.token;
-    
+
     const user = await details.findOne({ username: uname });
-    
-    if(!user)
-    {
+
+    if (!user) {
         res.redirect("/login")
-    }
-    else{
-        transactions.find({},(err,row)=>
-            {
-                if(err)
-                {
-                    console.log(err);
-                }
-                else
-                {
-                    res.render("sidebar",{title:uname,data:row,token:uname})
-                }
-            })
-       
+    } else {
+        transactions.find({}, (err, row) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.render("sidebar", { title: uname, data: row, token: uname })
+            }
+        })
+
     }
 
-  });
+});
 
-app.post("/profile/:token",async (req,res,next)=>
-  {
+app.post("/profile/:token", async(req, res, next) => {
     const uname = req.params.token;
 
-    console.log(req.body.search,req.body.uname);
+    console.log(req.body.search, req.body.uname);
 
     const user = await details.findOne({ username: uname });
-    if(!user)
-    {
-      res.redirect("/login")
-    }
-    else
-    {
+    if (!user) {
+        res.redirect("/login")
+    } else {
         // const seach = req.body.search;
         // console.log(req.body.search);
         // const users = await details.deleteOne({_id: userID});
         // res.json({redirect: '/loggedin/admin/'+adminUsername});
-       transactions.deleteMany({ticker:req.body.search},(err,row)=>
-       {
-           if(err)
-           {
-               console.log(err)
-           }
-           else
-           {
-               console.log(row)
-            
-            //  res.redirect("/profile/search/"+req.body.search)
-            res.json({redirect: '/profile/'+uname});
-           }
-       })
-   
+        transactions.deleteMany({ ticker: req.body.search }, (err, row) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log(row)
+
+                //  res.redirect("/profile/search/"+req.body.search)
+                res.json({ redirect: '/profile/' + uname });
+            }
+        })
+
     }
-  })
+})
 
 // app.post("/profile/search/:token",(req,res)=>
 // {
@@ -238,52 +212,45 @@ app.post("/profile/:token",async (req,res,next)=>
 
 // })
 
-app.post("/transactions/read/:token",async(req,res)=>
-{
-const new_tok = req.body.add_token;
-console.log(new_tok);
-const trans_go = await details.findOne({ username: new_tok });
-if(!trans_go)
-{
-    res.redirect("/login")
-}
-
-else
-{
-    res.json({redirect:"/transactions/"+new_tok})
-}
+app.post("/transactions/read/:token", async(req, res) => {
+    const new_tok = req.body.add_token;
+    console.log(new_tok);
+    const trans_go = await details.findOne({ username: new_tok });
+    if (!trans_go) {
+        res.redirect("/login")
+    } else {
+        res.json({ redirect: "/transactions/" + new_tok })
+    }
 })
 
 app.post("/transactions/:token", async(req, res) => {
-    
+
     const uname = req.params.token;
     console.log(req.body.itoken);
     const user = await details.findOne({ username: uname });
-    if(!user)
-    {
+    if (!user) {
         res.redirect("/login")
+    } else {
+        console.log("helll" + req.body)
+        const trans = new transactions({
+                trans_Date: req.body.date,
+                ticker: req.body.ticker,
+                action: req.body.select,
+                quantity: req.body.quantity,
+                price: req.body.price,
+                total: req.body.total,
+            })
+            // console.log(trans)
+            // trans.aggregate(
+            //     [
+            //         {$group: {_id: "$ticker",total:{$sum: "$total"}}}
+            //     ]
+            // )
+            // console.log(transactions);
+        trans.save().then((result) => { res.json({ redirect: "/profile/" + uname }) }).catch((err) => {
+            console.log(err);
+        })
     }
-    else{
-    console.log("helll"+req.body)
-    const trans = new transactions({
-        trans_Date: req.body.date,
-        ticker: req.body.ticker,
-        action: req.body.select,
-        quantity: req.body.quantity,
-        price: req.body.price,
-        total: req.body.total,
-    })
-    // console.log(trans)
-    // trans.aggregate(
-    //     [
-    //         {$group: {_id: "$ticker",total:{$sum: "$total"}}}
-    //     ]
-    // )
-    // console.log(transactions);
-    trans.save().then((result)=>{res.json({redirect:"/profile/"+uname})}).catch((err) => {
-        console.log(err);
-    })
-} 
 
 })
 
