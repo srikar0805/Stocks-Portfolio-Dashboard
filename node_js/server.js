@@ -19,7 +19,8 @@ app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 // app.use()
 
-const dbUrl = "mongodb+srv://SANJU:sanju_123456@cluster0.f8yjf.mongodb.net/ffsd_project?retryWrites=true&w=majority"
+const dbUrl = process.env.MONGODB_URI
+if (!dbUrl) { throw new Error("set MONGODB_URI, see .env.example") }
 
 mong.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('MongoDB connected...'))
     .catch(err => console.log(err));

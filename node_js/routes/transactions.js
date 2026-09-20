@@ -1,7 +1,7 @@
 'use strict';
 var request = require('request');
 
-var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=ZD3O8WO6O4515ORU';
+var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=' + process.env.ALPHAVANTAGE_API_KEY;
 
 request.get({
     url: url,
